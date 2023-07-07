@@ -1,0 +1,3 @@
+variable "metric_alerts" {
+
+}
