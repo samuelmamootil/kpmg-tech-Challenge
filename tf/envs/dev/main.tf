@@ -208,8 +208,6 @@ module "web_app" {
   java_container                           = local.web_app_java_container
   java_container_version                   = local.web_app_java_container_version
   workspace_id                             = module.log_analytics.analytics_workspace_id
-  private_dns_zone_vnet_id                 = data.azurerm_virtual_network.vnet.id
-  private_endpoint_subnet_id               = data.azurerm_subnet.snet[local.pe_subnet_name].id
   vnet_integration_subnet_id               = data.azurerm_subnet.snet[local.vnet_integration_subnet_name].id
   mssql_connections_string                 = module.database.azure_sql_connection_string
   application_insights_instrumentation_key = module.application_insights.instrumentation_key

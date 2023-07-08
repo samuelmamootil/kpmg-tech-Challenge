@@ -1,0 +1,35 @@
+name: 'Terraform Composite Action'
+description: 'Terraform composite action'
+
+inputs:
+  env_path:
+    description: "Environment path"
+    required: false
+
+runs:
+  using: "composite"
+
+  steps:
+
+  - name: Setup Terraform
+    uses: hashicorp/setup-terraform@v1
+
+  - name: Terraform Init
+    run: terraform -chdir="${{ inputs.env_path }}" init
+    shell: bash
+
+  - name: Terraform Format Check
+    run: terraform -chdir="${{ inputs.env_path }}" fmt -check -diff -recursive
+    shell: bash
+  
+  - name: Terraform Validate
+    run: terraform -chdir="${{ inputs.env_path }}" validate
+    shell: bash
+
+  - name: Terraform Plan
+    run: terraform -chdir="${{ inputs.env_path }}" plan -var-file=variables.tfvars
+    shell: bash
+
+  - name: Terraform Apply
+     run: terraform -chdir="${{ inputs.env_path }}" apply -var-file=variables.tfvars -auto-approve
+     shell: bash
