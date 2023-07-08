@@ -26,6 +26,7 @@ function Get-ValueFromNestedObject ($object, $key) {
 $object = @{“a”=@{“b”=@{“c”=”d”}}}
 $key = 'a/b/c'
 $value = Get-ValueFromNestedObject -object $object -key $key
+Write-Output "The Output Value is: -> $value " 
 #$object = @{“x”=@{“y”=@{“z”=”a”}}}
 #$key = 'x/y/z'
 #$value = Get-ValueFromNestedObject -object $object -key $key
