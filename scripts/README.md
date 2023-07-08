@@ -4,4 +4,4 @@ Get Nested Object Value
 ![image](https://github.com/samuelmamootil/kpmg-tech-challenge/blob/feature/powershell/Architecture%20Diag.png)
 
 Metadata  Output 
-![image](https://github.com/samuelmamootil/kpmg-tech-challenge/blob/feature/powershell/Architecture%20Diag.png)
+![image]([https://github.com/samuelmamootil/kpmg-tech-challenge/blob/feature/powershell/Architecture%20Diag.png](https://github.com/samuelmamootil/kpmg-tech-challenge/blob/feature/powershell/scripts/NestedObjectOutput.png)https://github.com/samuelmamootil/kpmg-tech-challenge/blob/feature/powershell/scripts/NestedObjectOutput.png)
