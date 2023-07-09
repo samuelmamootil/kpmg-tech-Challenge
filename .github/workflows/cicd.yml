@@ -1,0 +1,28 @@
+name: 'CI/CD'
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [main]
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+   
+    deploy-prod-env:
+        name: Prod
+        # if: github.ref == 'refs/heads/main'
+        uses: /samuelmamootil/kpmg-tech-challenge/.github/workflows/terraform.yml@main
+        with:
+          env_name: prod
+          env_path: tf/envs/dev
+          rg_name: rg-dkwip-we-prod-001
+        secrets: inherit

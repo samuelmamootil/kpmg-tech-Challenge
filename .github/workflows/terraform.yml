@@ -45,9 +45,33 @@
 name: 'Terraform'
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
+  workflow_call:
+    inputs:
+      env_name:
+        type: string
+        required: true
+      env_path:
+        type: string
+        required: true
+      terraform_version:
+        required: false
+        type: string
+        default: "1.1.9"
+      terraform_fmt_args:
+        required: false
+        type: string
+        default: -check -diff -recursive
+      terraform_plan_args:
+        required: false
+        type: string
+        default: -var-file=variables.tfvars -detailed-exitcode -no-color
+      terraform_apply_args:
+        required: false
+        type: string
+        default: -var-file=variables.tfvars -auto-approve
+      rg_name:
+        required: false
+        type: string    
 
 permissions:
   contents: read
