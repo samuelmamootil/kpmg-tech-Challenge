@@ -13,9 +13,7 @@ We have a nested object. We would like a function where you pass in the object a
 get back the value.
 The choice of language and implementation is up to you.
 
-![image](https://github.com/samuelmamootil/kpmg-tech-challenge/blob/feature/powershell/scripts/MetadataOutput.png)
-
-
+![image](https://github.com/samuelmamootil/kpmg-tech-challenge/blob/feature/powershell/scripts/NestedObjectOutput.png)
 
 # Challenge 3 Metadata Output 
 
@@ -24,7 +22,5 @@ We need to write code that will query the meta data of an instance within AWS or
 and provide a json formatted output.
 The choice of language and implementation is up to you.
 
-![image](https://github.com/samuelmamootil/kpmg-tech-challenge/blob/feature/powershell/scripts/NestedObjectOutput.png)
-
-
+![image](https://github.com/samuelmamootil/kpmg-tech-challenge/blob/feature/powershell/scripts/MetadataOutput.png)
 
