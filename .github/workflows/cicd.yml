@@ -1,28 +1,35 @@
-name: 'CI/CD'
+###############################################################
+#                              Synopsis
+# 
+# 
+# This Worflow will help deploy App and Infrastructure for POC
+# 
+# Created By : samuel.mamootil.ext@siemens.com
+###############################################################
+name: 'POC Env CI/CD'
 
 on:
   workflow_dispatch:
   repository_dispatch:
-    types: [main]
+    types: [feature/terraform]
   pull_request:
     types:
       - opened
       - synchronize
       - reopened
     branches:
-      - main
+      - feature/terraform
   push:
     branches:
-      - main
-
+      - feature/terraform
+      
 jobs:
-   
-    deploy-prod-env:
-        name: Prod
-        # if: github.ref == 'refs/heads/main'
-        uses: /samuelmamootil/kpmg-tech-challenge/.github/workflows/terraform.yml@main
-        with:
-          env_name: prod
-          env_path: tf/envs/dev
-          rg_name: rg-dkwip-we-prod-001
-        secrets: inherit
+  #Deploy Infrasturcture using Terraform 
+  deploy-poc-env:
+    name: POC
+    # if: github.ref == 'refs/heads/main'
+    uses: open/siemens-pol-git-repo-poc-01/.github/workflows/tf.yml@feature/terraform
+    with:
+      env_name: poc
+      env_path: cicd/tf/envs/poc
+    secrets: inherit
