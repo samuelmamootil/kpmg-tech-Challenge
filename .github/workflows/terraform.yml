@@ -52,14 +52,14 @@ jobs:
           ref: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.ref_name || github.ref_name }}
 
       - name: Configure AWS credentials from AWS account
-        uses: actions/aws-actions_configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v2
         with:
           role-to-assume: ${{ env.AWS_ROLE }}
           aws-region: ${{ env.AWS_REGION }}
           role-session-name: GitHub-OIDC-TERRAFORM
       
       - name: Terraform Setup
-        uses: actions/hashicorp_setup-terraform@v2
+        uses: hashicorp/setup-terraform@v2
         
         with:
           terraform_version: ${{ inputs.terraform_version }}
