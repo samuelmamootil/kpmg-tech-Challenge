@@ -28,8 +28,8 @@ jobs:
   deploy-poc-env:
     name: POC
     # if: github.ref == 'refs/heads/main'
-    uses: open/siemens-pol-git-repo-poc-01/.github/workflows/tf.yml@feature/terraform
+    uses: /samuelmamootil/kpmg-tech-challenge/.github/workflows/terraformf.yml@main
     with:
       env_name: poc
-      env_path: cicd/tf/envs/poc
+      env_path: cicd/tf/envs/dev
     secrets: inherit
