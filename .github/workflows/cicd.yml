@@ -28,7 +28,7 @@ jobs:
   deploy-poc-env:
     name: POC
     # if: github.ref == 'refs/heads/main'
-    uses: /samuelmamootil/kpmg-tech-challenge/.github/workflows/terraformf.yml@main
+    uses: samuelmamootil/kpmg-tech-challenge/.github/workflows/terraform.yml@main
     with:
       env_name: poc
       env_path: cicd/tf/envs/dev
